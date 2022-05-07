@@ -1,38 +1,55 @@
 <script setup lang="ts">
-import CL from '@/layout/CL.vue';
-import { CL as EM } from '@/enum/common';
-import { reactive } from 'vue';
+import CRUD from '@/layout/CRUD.vue';
+import { CRUD as EM } from '@/enum/common';
+import { reactive, ref, onMounted } from 'vue';
+import { user } from '@/api/user';
 const queryParams = reactive({
     page: 1,
     limit: 20,
 });
+const dataList = [
+    {
+        label: '姓名',
+        prop: 'name',
+        type: ['table'],
+    },
+    {
+        label: '角色',
+        prop: 'role',
+        type: ['table'],
+    },
+    {
+        label: '创建时间',
+        prop: 'createTime',
+        type: ['table'],
+    },
+];
+const tableData = ref([]);
+let total = ref(0);
 const getList = function () {
-    console.log(queryParams);
+    user().then(res => {
+        if (res.code == 200) {
+            tableData.value = res.data.data;
+            total.value = res.data.total;
+        }
+    });
 };
-const tableData = [
+onMounted(() => {
+    getList();
+});
+const handleBtn = [
     {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄',
+        name: '查询',
+        prop: 'search',
+        emit: 'getList',
     },
     {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1517 弄',
-    },
-    {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄',
-    },
-    {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1516 弄',
+        name: '添加',
+        prop: 'search',
     },
 ];
 </script>
 
 <template>
-    <CL @getList="getList" :total="200" :queryParams="queryParams" :tableData="tableData" />
+    <CRUD @getList="getList" :total="total" :handleBtn="handleBtn" :dataList="dataList" :queryParams="queryParams" :tableData="tableData" />
 </template>
