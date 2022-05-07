@@ -8,12 +8,14 @@ const props = defineProps({
     },
     queryParams: {
         type: Object,
+        required: true
     },
     tableData: {
         type: Array,
     },
     dataList: {
         type: Array,
+        required: true
     },
     handleBtn: {
         type: Array,
@@ -24,11 +26,11 @@ const columns = computed(() => {
 })
 console.log(columns)
 const emit = defineEmits(['getList']);
-function handleSizeChange(val) {
+function handleSizeChange(val: number) {
     props.queryParams.limit = val;
     emit('getList');
 }
-function handleCurrentChange(val) {
+function handleCurrentChange(val: number) {
     props.queryParams.page = val;
     emit('getList');
 }

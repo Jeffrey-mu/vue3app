@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CRUD from '@/layout/CRUD.vue';
 import { CRUD as EM } from '@/enum/common';
+import { HandleBtn } from '@/interface/common';
 import { reactive, ref, onMounted } from 'vue';
 import { user } from '@/api/user';
 const queryParams = reactive({
@@ -37,11 +38,10 @@ const getList = function () {
 onMounted(() => {
     getList();
 });
-const handleBtn = [
+const handleBtn: HandleBtn = [
     {
         name: '查询',
         prop: 'search',
-        emit: 'getList',
     },
     {
         name: '添加',
