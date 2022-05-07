@@ -1,19 +1,30 @@
 <template>
     <el-container>
-        <el-header>奖励系统</el-header>
+        <el-header>
+            <h1>VUE3.0</h1>
+        </el-header>
         <el-container>
             <el-aside width="200px">
                 <Menu></Menu>
             </el-aside>
             <el-container>
-                <el-main>Main</el-main>
+                <el-main>
+                    <el-breadcrumb separator="/">
+                        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+                        <el-breadcrumb-item><a href="/">{{route.meta.name}}</a></el-breadcrumb-item>
+                    </el-breadcrumb>
+                    <router-view />
+                </el-main>
                 <el-footer>Footer</el-footer>
             </el-container>
         </el-container>
     </el-container>
 </template>
 <script setup>
-import Menu from '@/components/common/menu.vue'
+import Menu from '@/components/common/menu.vue';
+import { useRoute } from 'vue-router';
+const route = useRoute();
+console.log(route)
 </script>
 <style>
 .el-container {
@@ -35,9 +46,8 @@ import Menu from '@/components/common/menu.vue'
 }
 
 .el-main {
-    background-color: #e9eef3;
+    padding: 4px;
     color: #333;
     /* text-align: center; */
-    line-height: 160px;
 }
 </style>

@@ -36,7 +36,7 @@ const onSubmit = () => {
     });
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .login-box {
     margin: auto;
     width: 100%;
