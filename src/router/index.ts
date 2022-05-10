@@ -31,13 +31,30 @@ const routes: Array<RouteRecordRaw> = [
                     },
                 ]
             },
+
         ]
     },
     {
-        path: '/about',
-        name: 'About',
-        component: () => import('@/views/About.vue')
-    }
+        path: '/Amusing',
+        name: 'Amusing',
+        meta: {
+            name: '有趣的'
+        },
+        component: () => import('@/views/Amusing.vue'),
+        children: [
+            {
+                path: '/Amusing/ball',
+                name: 'ball',
+                component: () => import('@/views/Amusing/ball.vue'),
+                children: [
+
+                ],
+                meta: {
+                    name: '3d球'
+                }
+            },
+        ]
+    },
 ]
 
 const router = createRouter({

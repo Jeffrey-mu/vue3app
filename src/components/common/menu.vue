@@ -1,5 +1,5 @@
 <template>
-    <el-menu active-text-color="#ffd04b" mode="vertical" router background-color="#545c64" class="el-menu-vertical-demo" default-active="2" text-color="#fff" @open="handleOpen" @close="handleClose">
+    <el-menu active-text-color="#ffd04b" mode="vertical" router background-color="#fff" class="el-menu-vertical-demo" default-active="2" text-color="#111" @open="handleOpen" @close="handleClose">
         <el-sub-menu :index="item.path" v-for="item in menuList">
             <template #title>
                 <span>{{ item.name }}</span>
@@ -22,6 +22,16 @@ const menuList = [
             {
                 path: '/System/role',
                 name: '角色设置',
+            },
+        ],
+    },
+    {
+        path: '/Amusing',
+        name: '有趣的',
+        children: [
+            {
+                path: '/Amusing/ball',
+                name: '3d球',
             },
         ],
     },
