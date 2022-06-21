@@ -6,6 +6,7 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.1
   '@vueuse/core': ^8.4.2
   axios: ^0.27.2
+  compressorjs: ^1.1.1
   element-plus: ^2.1.11
   sass: ^1.51.0
   three: ^0.111.0
@@ -27,6 +28,7 @@ devDependencies:
   '@types/node': registry.npmjs.org/@types/node/17.0.30
   '@unocss/reset': registry.npmjs.org/@unocss/reset/0.39.3
   '@vitejs/plugin-vue': registry.npmjs.org/@vitejs/plugin-vue/2.3.1_vite@2.9.6+vue@3.2.33
+  compressorjs: registry.npmjs.org/compressorjs/1.1.1
   sass: registry.npmjs.org/sass/1.51.0
   three: registry.npmjs.org/three/0.111.0
   typescript: registry.npmjs.org/typescript/4.6.4
@@ -590,6 +592,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  registry.npmjs.org/blueimp-canvas-to-blob/3.29.0:
+    resolution: {integrity: sha512-0pcSSGxC0QxT+yVkivxIqW0Y4VlO2XSDPofBAqoJ1qJxgH9eiUDLv50Rixij2cDuEfx4M6DpD9UGZpRhT5Q8qg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/blueimp-canvas-to-blob/-/blueimp-canvas-to-blob-3.29.0.tgz}
+    name: blueimp-canvas-to-blob
+    version: 3.29.0
+    dev: true
+
   registry.npmjs.org/braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/braces/-/braces-3.0.2.tgz}
     name: braces
@@ -637,6 +645,15 @@ packages:
     dependencies:
       delayed-stream: registry.npmjs.org/delayed-stream/1.0.0
     dev: false
+
+  registry.npmjs.org/compressorjs/1.1.1:
+    resolution: {integrity: sha512-SysRuUPfmUNoq+RviE0iMFVUmoX2q/x+7PkEPUmk6NGkd85hDrmvujx0Qtp8UCGA6KMe5kuodsylPQcNaLf60w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/compressorjs/-/compressorjs-1.1.1.tgz}
+    name: compressorjs
+    version: 1.1.1
+    dependencies:
+      blueimp-canvas-to-blob: registry.npmjs.org/blueimp-canvas-to-blob/3.29.0
+      is-blob: registry.npmjs.org/is-blob/2.1.0
+    dev: true
 
   registry.npmjs.org/consola/2.15.3:
     resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/consola/-/consola-2.15.3.tgz}
@@ -1155,6 +1172,13 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       binary-extensions: registry.npmjs.org/binary-extensions/2.2.0
+    dev: true
+
+  registry.npmjs.org/is-blob/2.1.0:
+    resolution: {integrity: sha512-SZ/fTft5eUhQM6oF/ZaASFDEdbFVe89Imltn9uZr03wdKMcWNVYSMjQPFtg05QuNkt5l5c135ElvXEQG0rk4tw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-blob/-/is-blob-2.1.0.tgz}
+    name: is-blob
+    version: 2.1.0
+    engines: {node: '>=6'}
     dev: true
 
   registry.npmjs.org/is-core-module/2.9.0:

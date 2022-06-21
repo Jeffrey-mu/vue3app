@@ -35,6 +35,9 @@ const getList = function () {
         }
     });
 };
+const add = function (fn: Function) {
+    fn()
+};
 onMounted(() => {
     getList();
 });
@@ -45,7 +48,7 @@ const handleBtn: HandleBtn = [
     },
     {
         name: '添加',
-        prop: 'search',
+        prop: 'add',
     },
 ];
 </script>
